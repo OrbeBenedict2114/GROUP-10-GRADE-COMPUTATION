@@ -18,3 +18,9 @@ def main():
         
         eq, adj = get_equiv(q_val)
         print(f"Q{i} Result: {q_val:.2f}% | {eq:.2f} | {adj}")
+fin_p = q_grades[-1]
+    fin_e, fin_a = get_equiv(fin_p)
+    print(f"\nFINAL GRADE: {fin_p:.2f}% | EQUIV: {fin_e:.2f} | RATING: {fin_a}")
+
+if __name__ == "__main__":
+    main()
