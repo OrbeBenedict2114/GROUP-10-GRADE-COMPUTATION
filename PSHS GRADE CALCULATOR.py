@@ -5,7 +5,7 @@ def get_equiv(p):
     for threshold, eq, adj in scales:
         if p >= threshold: return eq, adj
     return 5.0, "FAILED"
- def main():
+def main():
     q_grades = []
     for i in range(1, 5):
         print(f"\nQ{i} Inputs:")
