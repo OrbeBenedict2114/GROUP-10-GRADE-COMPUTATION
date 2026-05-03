@@ -5,4 +5,16 @@ def get_equiv(p):
     for threshold, eq, adj in scales:
         if p >= threshold: return eq, adj
     return 5.0, "FAILED"
-  
+ def main():
+    q_grades = []
+    for i in range(1, 5):
+        print(f"\nQ{i} Inputs:")
+        f_s, f_t = float(input("Formative Score: ")), float(input("Formative Total: "))
+        s_s, s_t = float(input("Summative Score: ")), float(input("Summative Total: "))
+        tentative = ((f_s / f_t) * 30) + ((s_s / s_t) * 70)
+        
+        q_val = tentative if i == 1 else (q_grades[-1] + 2 * tentative) / 3
+        q_grades.append(q_val)
+        
+        eq, adj = get_equiv(q_val)
+        print(f"Q{i} Result: {q_val:.2f}% | {eq:.2f} | {adj}")
